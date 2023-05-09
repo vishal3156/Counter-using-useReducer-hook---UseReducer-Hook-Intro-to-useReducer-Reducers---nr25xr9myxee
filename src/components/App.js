@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import '../styles/App.css';
 const App = () => {
   function reducer(state, action){
@@ -15,7 +15,7 @@ const App = () => {
       default:
         return state
     }
-    
+  }
     const [taskState, dispatch] = useReducer(reducer, {count: 0})
 
   return (
