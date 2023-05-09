@@ -1,6 +1,22 @@
 import React from 'react'
 import '../styles/App.css';
 const App = () => {
+  function reducer(state, action){
+    switch(action.type){
+      case 'add':
+        return {...state, count:state.count+1}
+        
+      case 'delete':
+        return {...state, count:state.count-1}
+        
+      case 'deleteAll':
+        return {...state, count: 0}
+        
+      default:
+        return state
+    }
+    
+    const [taskState, dispatch] = useReducer(reducer, {count: 0})
 
   return (
     <div id="main">
